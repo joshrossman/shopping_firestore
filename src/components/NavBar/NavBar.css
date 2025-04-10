@@ -1,0 +1,23 @@
+.nav {
+    background-color: black;
+    
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+   
+
+}
+.nav-part{
+    flex: .1;
+}
+.nav-links{
+    width:20px;
+    padding:20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:aliceblue;
+    font-size: larger;
+    font-weight: 800;
+
+    
+}
