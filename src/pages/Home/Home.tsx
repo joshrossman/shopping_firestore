@@ -3,12 +3,13 @@ import { Product } from "../../types/type"
 import ProductCard from '../../components/ProductCard/ProductCard'
 import './Home.css'
 import { useProductContext } from '../../Context/ProductContext'
+
 import { useQuery } from 'react-query'
 import { fetchProducts, fetchCategories } from '../../api/api'
 import NavBar from '../../components/NavBar/NavBar'
 import LoginButton from '../../components/Logging/LoginButton';
 import LogoutButton from '../../components/Logging/LogoutButton';
-import Token from '../../components/Logging/Token';
+
 
 const Home:React.FC = () => {
  
@@ -44,7 +45,7 @@ const Home:React.FC = () => {
   const filteredProducts= getFilteredProducts();
   return (
     <div>
-      <Token></Token>
+      
       <NavBar />
       <select 
         onChange={(e) => 

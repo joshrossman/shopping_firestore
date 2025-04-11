@@ -6,13 +6,16 @@ import {QueryClient, QueryClientProvider } from 'react-query'
 import Cart from "./pages/Cart/Cart"
 import Auth0ProviderWithNavigate from "./components/Logging/AuthProvider"
 import Callback from "./components/Logging/Callback"
+import { CartProvider } from "./Context/CartContext"
 
 function App() {
   const queryClient = new QueryClient();
 
   return (
-    <Auth0ProviderWithNavigate>   
+    <Auth0ProviderWithNavigate>  
+     
      <ProductProvider>
+     <CartProvider>
       <QueryClientProvider client={queryClient}>
        
           <Routes>
@@ -23,6 +26,7 @@ function App() {
           </Routes>  
       
     </QueryClientProvider>
+    </CartProvider>
     </ProductProvider>
     </Auth0ProviderWithNavigate>
 

@@ -1,13 +1,15 @@
 import React from 'react'
 import { Product } from "../../types/type"
 import "./ProductCard.css"
-import { useProductContext } from '../../Context/ProductContext'
+import { useCartContext } from '../../Context/CartContext'
 import StarRatings from 'react-star-ratings'
 
 
 const ProductCard:React.FC<{product:Product}> = ({product}) => {
-  const { cart, dispatch } = useProductContext();
+  const { cart, dispatch } = useCartContext();
+  
   const addToCart = (product:Product) => {
+    
       dispatch({type:'ADD_PRODUCT',payload:product})
 
   }

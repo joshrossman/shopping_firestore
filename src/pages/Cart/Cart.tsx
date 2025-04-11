@@ -1,11 +1,11 @@
 import React from 'react'
-import { useProductContext } from '../../Context/ProductContext'
+import { useCartContext } from '../../Context/CartContext'
 import NavBar from '../../components/NavBar/NavBar';
 import CartCard from '../../components/CartCard/CartCard';
 import './cart.css'
 
 const Cart = () => {
-const {dispatch,cart, cartTotal, cartItemTotal} = useProductContext();
+const {dispatch,cart, cartTotal, cartItemTotal} = useCartContext();
   return (
     <>
     <NavBar />

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Product } from "../../types/type"
 import "./CartCard.css"
-import { useProductContext } from '../../Context/ProductContext'
+import { useCartContext } from '../../Context/CartContext'
 
 
 const CartCard:React.FC<{product:Product}> = ({product}) => {
-  const { dispatch } = useProductContext();
+  const { dispatch } = useCartContext();
   const removeFromCart = (product:Product) => {
       dispatch({type:'REMOVE_PRODUCT',payload:product})
 
