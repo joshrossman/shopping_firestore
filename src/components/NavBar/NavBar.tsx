@@ -1,19 +1,25 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import { Link }  from 'react-router-dom'
 import './NavBar.css'
-import LoginButton from '../Logging/LoginButton'
-import LogoutButton from '../Logging/LogoutButton'
+import { useAuth } from '../../Context/AuthContext'
+
 
 
 const NavBar = () => {
-
+  const {user} = useAuth()
   return (
     
     <div className='nav'>
-      <LoginButton   />
-      <LogoutButton />
-    <NavLink to='/' className={`${'nav-links'} ${'nav-part'}`}>Home</NavLink>
-    <NavLink to='/cart' className={`${'nav-links'} ${'nav-part'}`}>Cart</NavLink>
+   
+    <Link to='/' className={`${'nav-links'} ${'nav-part'}`}>Home</Link>
+    <Link to='/cart' className={`${'nav-links'} ${'nav-part'}`}>Cart</Link>
+    {!user?
+      (<><Link to='/register' className={`${'nav-links'} ${'nav-part'}`}>Register</Link>
+      <Link to='/login' className={`${'nav-links'} ${'nav-part'}`}>Login</Link></>):
+      (<><Link to='/profile' className={`${'nav-links'} ${'nav-part'}`}>profile</Link>
+      <Link to='/logout' className={`${'nav-links'} ${'nav-part'}`}>Logout</Link></>)
+    }
+    
     
       
     </div>

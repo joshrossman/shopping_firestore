@@ -9,11 +9,10 @@ export interface Product{
     rating:
     {
         rate:number;
-        count:number;
+        count?:number;
     }
     //additional types which will be needed for the cart. It must be optional, since when it is called from the api endpoint, it will not have a quantity.
     quantity?: number;
-    createAt?:Date;
-    updateAt?:Date;
+    
 
 }

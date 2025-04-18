@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCartContext } from '../../Context/CartContext'
-import NavBar from '../../components/NavBar/NavBar';
+
 import CartCard from '../../components/CartCard/CartCard';
 import './cart.css'
 
@@ -8,7 +8,7 @@ const Cart = () => {
 const {dispatch,cart, cartTotal, cartItemTotal} = useCartContext();
   return (
     <>
-    <NavBar />
+    
    
     <div className='div-cart'>Cart Total: ${cartTotal}<br></br>
     Number of Items in Cart: {cartItemTotal}<br></br>

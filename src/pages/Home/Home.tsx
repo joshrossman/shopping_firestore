@@ -6,14 +6,14 @@ import { useProductContext } from '../../Context/ProductContext'
 
 import { useQuery } from 'react-query'
 import { fetchProducts, fetchCategories } from '../../api/api'
-import NavBar from '../../components/NavBar/NavBar'
+
 import LoginButton from '../../components/Logging/LoginButton';
 import LogoutButton from '../../components/Logging/LogoutButton';
 
 
 const Home:React.FC = () => {
  
-    <NavBar />
+    
     const { products, selectedCategory, dispatch } = useProductContext();
 
     //fetches data from fakestore api. Displays data in console.
@@ -46,7 +46,7 @@ const Home:React.FC = () => {
   return (
     <div>
       
-      <NavBar />
+     
       <select 
         onChange={(e) => 
           dispatch({type:'SET_SELECTED_CATEGORY', payload: e.target.value})

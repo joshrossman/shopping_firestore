@@ -1,14 +1,12 @@
 .nav {
-    background-color: black;
-    
-    padding: 10px;
     display: flex;
-    flex-direction: row;
-   
+    gap: 1rem;
+    align-items:center;
+    padding:1rem;
+    background-color: black;
+    width: 100%;
+    margin-bottom: 1rem;
 
-}
-.nav-part{
-    flex: .1;
 }
 .nav-links{
     width:20px;
@@ -16,8 +14,19 @@
     text-decoration: none;
     text-transform: uppercase;
     color:aliceblue;
-    font-size: larger;
+    font-size: 1.2rem;
     font-weight: 800;
+    margin: 0 1rem;
+    cursor: pointer;
 
     
+}
+.nav-links::hover{
+    background-color: rgba(0, 0, 0, 0.792);
+
+    
+}
+
+.nav-part{
+    flex: .3;
 }
