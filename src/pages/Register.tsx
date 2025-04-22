@@ -5,15 +5,9 @@ import { useNavigate } from 'react-router-dom'
 import styles from '../styles/auth-styles'
 import { db} from  '../lib/firebase/firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import { User } from 'firebase/auth'
 
-interface User{
-    id?:string;
-    email: string;
-    password?:string;
-    name: string;
-    age?:string;
-    address?:string;
-}
+
 
 const Register = () => {
     const [email, setEmail] = useState('');

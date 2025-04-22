@@ -32,9 +32,9 @@ const cartReducer = (
     switch (action.type) {
         case 'ADD_PRODUCT':
             const isInCart = state.cart.findIndex((cart:Product)=>cart.title===action.payload.title)
-            if(isInCart===-1)
+            if(isInCart===-1||isInCart===0)
                 {
-                if((action.payload.quantity!>0)||action.payload.quantity===undefined)
+                if((action.payload.quantity!>=0)||action.payload.quantity===undefined)
                     action.payload.quantity=1;
                 sessionStorage.setItem('cart',JSON.stringify({
                     ...state,cart:[...state.cart,action.payload],

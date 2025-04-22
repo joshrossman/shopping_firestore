@@ -25,6 +25,7 @@ Login to your account so we can send items to the right place!
  - [Readme.so](https://readme.so/editor)
  - [ChatGpt] For debugging help
  - [FakeStoreAPI] For mock backend API calls.
+ - [FreeCssInputs] https://copy-paste-css.com/form-input-text
  
 ## Run Locally
 

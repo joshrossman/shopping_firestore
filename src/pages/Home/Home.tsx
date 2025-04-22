@@ -4,36 +4,29 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 import './Home.css'
 import { useProductContext } from '../../Context/ProductContext'
 
-import { useQuery } from 'react-query'
-import { fetchProducts, fetchCategories } from '../../api/api'
 
-import LoginButton from '../../components/Logging/LoginButton';
-import LogoutButton from '../../components/Logging/LogoutButton';
-
+import { getAllProducts } from '../../services/productServices'
+// control forward slash =/ comments out a line
+import { Order } from '../../types/type'
 
 const Home:React.FC = () => {
  
     
     const { products, selectedCategory, dispatch } = useProductContext();
 
-    //fetches data from fakestore api. Displays data in console.
-   
-    const {data: productsData, isLoading} = useQuery({
-      queryKey: ['products'],
-      queryFn: fetchProducts,
-    });
-
-    const { data: categories } = useQuery({
-      queryKey:['categories'],
-      queryFn:fetchCategories,
-    });
-
-    useEffect(() => {
-      if(productsData){
-        dispatch({type:'SET_PRODUCTS', payload:productsData.data});
+    
+    useEffect(() =>{
+      const fetchProducts = async() =>{
+        const data = await getAllProducts();
+        dispatch({type:"SET_PRODUCTS",payload:data})
       }
-    },[dispatch, productsData]
-  );
+      fetchProducts();
+      
+
+
+    },[])
+
+   console.log(products)
 
   const getFilteredProducts = () => {
     if(selectedCategory){
@@ -53,16 +46,18 @@ const Home:React.FC = () => {
         }
         >
         <option value=''>All Categories</option>
-        {categories?.data.map((category)=>(
-          <option value={category}>{category}</option>
-        ))};
+        <option>men's clothing</option>
+        <option>women's clothing</option>
+        <option>electronics</option>
+        <option>jewelery</option>
+        
       </select> 
     <div className='container'>
-        {isLoading && <h1>Loading...</h1>}
+       
   
         {filteredProducts?.map((product:Product)=>
         <ProductCard product={product} />
-        )}
+        )} 
     </div>
     </div>
 

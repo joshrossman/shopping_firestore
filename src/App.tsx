@@ -12,8 +12,11 @@ import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Logout from "./pages/Logout"
 import NavBar from "./components/NavBar/NavBar"
-import AddDataForm from "./pages/AddDataForm"
+import AddDataForm from "./pages/addProduct/AddDataForm"
 import DisplayData from "./pages/DisplayData"
+import ProductEditAndDisplay from "./pages/Product Edit/ProductEditAndDisplay"
+import DisplayOrders from "./pages/Home/DisplayOrder"
+
 
 function App() {
   const queryClient = new QueryClient();
@@ -36,6 +39,11 @@ function App() {
             <Route path='/logout' element={<Logout />} />
             <Route path='/add' element={<AddDataForm />} />
             <Route path='/display' element={<DisplayData />} />
+            <Route path='/displayproducts' element={<ProductEditAndDisplay />} />
+            <Route path='/displayorders' element={<DisplayOrders />} />
+
+            
+            
           </Routes>  
       
       </BrowserRouter>

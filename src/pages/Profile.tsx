@@ -4,15 +4,9 @@ import { updateProfile, deleteUser } from 'firebase/auth'
 import styles from '../styles/auth-styles'
 import { db } from '../lib/firebase/firebase'
 import { collection, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { User } from 'firebase/auth'
 
-interface User{
-    id?:string;
-    email: string;
-    password:string;
-    displayName: string;
-    age?:string;
-    address?:string;
-}
+
 
 const Profile = () => {
 

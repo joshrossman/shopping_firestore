@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import { db } from  '../lib/firebase/firebase';
+import { db } from  '../../lib/firebase/firebase';
 import { collection, addDoc } from 'firebase/firestore';
-import { Product } from '../types/type'
+import { Product } from '../../types/type'
+import './AddDataForm.css'
 
 /*
 id:number;
@@ -81,34 +82,35 @@ const AddDataForm = () => {
             
         
         <form onSubmit={handleSubmit}>
-            <input type='text' name='title' value={String(data.title)}
+            <h1>Add New Product:</h1>
+            <input className='text' type='text' name='title' value={String(data.title)}
             onChange={handleChange}
             placeholder="title"/><br></br>
-             <input type='number' name='price' value={data.price===0?'':data.price}
+             <input className='text' type='number' name='price' value={data.price===0?'':data.price}
             onChange={handleChange}
             placeholder="price"/><br></br>
-             <input type='text' name='description' value={String(data.description)}
+             <input className='text' type='text' name='description' value={String(data.description)}
             onChange={handleChange}
             placeholder="description"/><br></br>
-             <input type='text' name='category' value={String(data.category)}
+             <input className='text' type='text' name='category' value={String(data.category)}
             onChange={handleChange}
             placeholder="category"/><br></br>
-             <input type='text' name='image' value={String(data.image)}
+             <input className='text' type='text' name='image' value={String(data.image)}
             onChange={handleChange}
             placeholder="image"/><br></br>
-             <input type='number' name='rate' value={data.rating.rate===0?'':data.rating.rate}
+             <input className='text' type='number' name='rate' value={data.rating.rate===0?'':data.rating.rate}
             onChange={handleChange}
             placeholder="rate"/><br></br>
-             <input type='number' name='count' value={data.rating.count===0?'':data.rating.count}
+             <input className='text' type='number' name='count' value={data.rating.count===0?'':data.rating.count}
             onChange={handleChange}
             placeholder="count"/><br></br>
-             <input type='number' name='quantity' value={data.quantity===0?'':data.quantity}
+             <input  className='text'type='number' name='quantity' value={data.quantity===0?'':data.quantity}
             onChange={handleChange}
             placeholder="quantity"/><br></br>
            
         
       
-        <button type='submit'>Add Product</button>
+        <button className='button' type='submit'>Add Product</button>
         </form>
     )   
 }

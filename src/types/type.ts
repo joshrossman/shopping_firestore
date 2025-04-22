@@ -1,6 +1,6 @@
 export interface Product{
     //data base on the api information on fakestoreapi.com
-    id:number;
+    id:string;
     title: string;
     price: number;
     description: string;
@@ -15,4 +15,25 @@ export interface Product{
     quantity?: number;
     
 
-}
+};
+
+export interface Order{
+   id:string,
+   date:string,
+   products: Product[],
+   totalPrice:number,
+   userId:string,
+   userName:string,
+
+
+ 
+  };
+
+  export interface User{
+      id?:string;
+      email: string;
+      password:string;
+      name: string;
+      age?:string;
+      address?:string;
+  }

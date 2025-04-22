@@ -16,8 +16,14 @@ const NavBar = () => {
     {!user?
       (<><Link to='/register' className={`${'nav-links'} ${'nav-part'}`}>Register</Link>
       <Link to='/login' className={`${'nav-links'} ${'nav-part'}`}>Login</Link></>):
-      (<><Link to='/profile' className={`${'nav-links'} ${'nav-part'}`}>profile</Link>
+      (<>
+      <Link to='/displayorders' className={`${'nav-links'} ${'nav-part'}`}>Display Orders</Link>
+      <Link to='/add' className={`${'nav-links'} ${'nav-part'}`}>Add Product</Link>
+      <Link to='/displayproducts' className={`${'nav-links'} ${'nav-part'}`}>Edit Product</Link>
+      <Link to='/profile' className={`${'nav-links'} ${'nav-part'}`}>Profile</Link>
       <Link to='/logout' className={`${'nav-links'} ${'nav-part'}`}>Logout</Link></>)
+
+
     }
     
     

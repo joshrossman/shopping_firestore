@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../lib/firebase/firebase'
 import { collection, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { User } from '@auth0/auth0-react';
 
-interface User{
-    id?:string;
-    email: string;
-    password:string;
-    name: string;
-    age?:string;
-    address?:string;
-}
 
 const DisplayData = () => {
     const [users, setUsers] = useState<User[]>([]);

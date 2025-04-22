@@ -22,6 +22,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+//don't really need users and products because all of the information is already called with db
 const users = getFirestore(app);
 const products = getFirestore(app);
 
