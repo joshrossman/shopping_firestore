@@ -4,7 +4,7 @@ import { createContext, useState, useEffect, useContext } from 'react'
 import { onAuthStateChanged, User } from 'firebase/auth'
 import { auth } from '../lib/firebase/firebase'
 import { db } from '../lib/firebase/firebase';
-import { collection, getDocs, doc } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 
 
 
@@ -13,7 +13,7 @@ import { collection, getDocs, doc } from 'firebase/firestore';
 
 const AuthContext = createContext ({
     user:null,
-    setUser:(user:User) => {},
+    setUser:(_user:any) => {},
     globalUserId:'',
     globalUserName:'',
     
@@ -21,9 +21,9 @@ const AuthContext = createContext ({
 });
 
 export const AuthProvider = ({children}: {children:React.ReactNode}) => {
-    const [user,setUser] = useState<User | null>(null);
-    const [globalUserId, setId] = useState <string|null|undefined>('')
-    const [globalUserName, setName] = useState <string|null|undefined>('')
+    const [user,setUser] = useState<any>(null);
+    const [globalUserId, setId] = useState <string>('')
+    const [globalUserName, setName] = useState <string>('')
 
     useEffect(() => {
         const fetchData = async() => {
