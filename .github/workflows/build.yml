@@ -27,7 +27,7 @@ jobs:
 
     # Step 3: Install dependencies
     - name: Install dependencies
-      run: npm install --legacy-peer-deps --force
+      run: npm install --legacy-peer-deps 
 
     # Step 4: Run tests 
     - name: Run tests
