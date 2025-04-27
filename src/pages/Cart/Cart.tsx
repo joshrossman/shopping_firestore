@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState } from 'react'
 import { useCartContext } from '../../Context/CartContext'
-import { Order, Product, User } from '../../types/type';
+import { Order  } from '../../types/type';
 import { useAuth } from '../../Context/AuthContext';
 
 import { db } from '../../lib/firebase/firebase';
-import { collection, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
 
 
 import CartCard from '../../components/CartCard/CartCard';
@@ -15,7 +15,7 @@ const Cart = () => {
 const {dispatch,cart, cartTotal, cartItemTotal} = useCartContext();
 const { globalUserId, globalUserName } = useAuth();
 
-  const [data, setData] = useState<Omit<Order,'id'>>({
+  const [_data, setData] = useState<Omit<Order,'id'>>({
     date:'',
     products:[],
     totalPrice:0,
