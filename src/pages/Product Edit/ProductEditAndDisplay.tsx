@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { db } from '../../lib/firebase/firebase'
 import { collection, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { Product } from '../../types/type';
@@ -8,7 +8,6 @@ import './ProductEdit.css'
 
 const ProductEditAndDisplay = () => {
     const [products, setProducts] = useState<Product[]>([]);
-    const [productId, setProductId] = useState<string>('');
     const [newTitle, setNewTitle ] = useState<string>('');
     const [newDescription, setNewDescription] = useState<string>('');
     const [newPrice, setNewPrice] = useState<number>(0);
@@ -20,7 +19,7 @@ const ProductEditAndDisplay = () => {
 
 
 
-    const updateProduct = async (productId, updatedData) => {
+    const updateProduct = async (productId:string, updatedData:any) => {
         const productDoc = doc(db, 'products', productId);
         await updateDoc(productDoc, updatedData);
         setUpdate(true)
@@ -34,7 +33,7 @@ const ProductEditAndDisplay = () => {
         alert('Update was successful!')
     };
 
-    const deleteProduct = async (productId)=> {
+    const deleteProduct = async (productId:string)=> {
         await deleteDoc(doc(db,'products',productId))
         alert("Product has been succefully deleted")
         setUpdate(true)

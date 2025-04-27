@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect  } from 'react'
 import { Product } from "../../types/type"
 import ProductCard from '../../components/ProductCard/ProductCard'
 import './Home.css'
@@ -7,7 +7,7 @@ import { useProductContext } from '../../Context/ProductContext'
 
 import { getAllProducts } from '../../services/productServices'
 // control forward slash =/ comments out a line
-import { Order } from '../../types/type'
+
 
 const Home:React.FC = () => {
  
