@@ -1,4 +1,4 @@
-name: React App CI/CD workflow
+name: React App CI/CD workflows
 
 on:
   push:
