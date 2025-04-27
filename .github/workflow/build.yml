@@ -1,13 +1,12 @@
-
 name: React App CI/CD workflow
 
 on:
   push:
     branches:
-      -master
-  pull_requests:
+      - master
+  pull_request:
     branches:
-      -master
+      - master
 
 
 jobs:
@@ -16,26 +15,27 @@ jobs:
 
     steps:
     #step 1: Checkout the code
-    -name: checkout code
-    uses: actions/checkout@v2
+    - name: checkout code
+      uses: actions/checkout@v2
 
     #step 2: Set op node.js
-    -name: Set up Node.js
-    uses: actions/setup-node@v3
-    with:
-      node-version: '20' #use desired Node.js version
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20' 
+      #use desired Node.js version
 
     # Step 3: Install dependencies
-    -name: Install dependencies
-    run: npm install --legacy-peer-deps
+    - name: Install dependencies
+      run: npm install --legacy-peer-deps
 
     # Step 4: Run tests 
-    -name: Run tests
-    run: npm test
+    - name: Run tests
+      run: npm test
 
     #Step 5: Build React app
-    -name: Build React app
-    run: npm run build:skip-ts
+    - name: Build React app
+      run: npm run build:skip-ts
 
     
 
