@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { db } from '../lib/firebase/firebase'
 import { collection, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { User } from '@auth0/auth0-react';
@@ -9,12 +9,12 @@ const DisplayData = () => {
     const [newAge, setNewAge ] = useState<string>('');
     const [newName, setNewName] = useState<string>('');
 
-    const updateUser = async (userId, updatedData) => {
+    const updateUser = async (userId:string, updatedData:any) => {
         const userDoc = doc(db, ' users', userId);
         await updateDoc(userDoc, updatedData);
     };
 
-    const deleteUser = async (userId)=> {
+    const deleteUser = async (userId:string)=> {
         await deleteDoc(doc(db,'users',userId))
     }
 

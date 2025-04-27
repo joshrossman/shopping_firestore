@@ -30,10 +30,10 @@ export interface Order{
   };
 
   export interface User{
-      id?:string;
+      id?:string|never;
       email: string;
       password:string;
-      name: string;
-      age?:string;
-      address?:string;
+      displayName: string;
+      age:string;
+      address:string;
   }

@@ -4,7 +4,7 @@ import { updateProfile, deleteUser } from 'firebase/auth'
 import styles from '../styles/auth-styles'
 import { db } from '../lib/firebase/firebase'
 import { collection, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore';
-import { User } from 'firebase/auth'
+import { User } from '../types/type'
 
 
 
@@ -22,6 +22,7 @@ const Profile = () => {
     {
 
       console.log('user',user)
+      
       setEmail(user.email)
     }
     }
@@ -73,12 +74,12 @@ const Profile = () => {
 
         
    
-    const updateUser = async (userId, updatedData) => {
+    const updateUser = async (userId:any, updatedData:any) => {
             const userDoc = doc(db, 'users', userId);
             await updateDoc(userDoc, updatedData);
       };
       
-    const deleteMyUser = async (userId)=> {
+    const deleteMyUser = async (userId:any)=> {
           await deleteDoc(doc(db,'users',userId))
       }
     
@@ -160,7 +161,7 @@ const Profile = () => {
         Update Profile
       </button>
 
-      {success&&<p style={styles.success}>{success}</p>}
+      {success&&<p>{success}</p>}
       {error&&<p style={styles.error}>{error}</p>}
       <div>
         <button
