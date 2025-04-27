@@ -20,8 +20,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Verify Vercel CLI INstallation
+        run: vercel --version
+
       - name: Install Vercel CLI
-        run: npm install --global vercel@latest --legacy-peer-deps --force
+        run: npm install --global vercel@latest --legacy-peer-deps 
 
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{secrets.VERCEL_TOKEN}}
