@@ -14,12 +14,12 @@ const Register = () => {
     const [password,setPassword] = useState('')
     
     const [error, setError] = useState('');
-    const [users, setUsers] = useState<User[]>([]);
+    const [_users, _setUsers] = useState<User[]>([]);
     const [age, setAge ] = useState<string>('');
     const [displayName, setName] = useState<string>('');
     const [address, setAddress] = useState<string>('');
 
-    const [data, setData] = useState<User>({id:'',email:'',password:'',name:'',age:'',address:''});
+    const [_data, _setData] = useState<User>({id:'',email:'',password:'',name:'',age:'',address:''});
   
       
     
