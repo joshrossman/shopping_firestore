@@ -1,0 +1,42 @@
+
+name: React App CI/CD
+
+on:
+  push:
+    branches:
+      -master
+  pull_requests:
+    branches:
+      -master
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    #step 1: Checkout the code
+    -name: checkout code
+    uses: actions/checkout@v2
+
+    #step 2: Set op node.js
+    -name: Set up Node.js
+    uses: actions/setup-node@v3
+    with:
+      node-version: '20' #use desired Node.js version
+
+    # Step 3: Install dependencies
+    -name: Install dependencies
+    run: npm install --legacy-peer-deps
+
+    # Step 4: Run tests 
+    -name: Run tests
+    run: npm test
+
+    #Step 5: Build React app
+    -name: Build React app
+    run: npm run build:skip-ts
+
+    
+
+    
