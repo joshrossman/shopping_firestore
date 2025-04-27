@@ -15,7 +15,7 @@ jobs:
 
     steps:
     #step 1: Checkout the code
-    - name: checkout code
+    - name: Checkout code
       uses: actions/checkout@v2
 
     #step 2: Set op node.js
@@ -35,7 +35,7 @@ jobs:
 
     #Step 5: Build React app
     - name: Build React app
-      run: npm run 
+      run: npm run build:skip-ts
 
   deploy:
     runs-on: ubuntu-latest
