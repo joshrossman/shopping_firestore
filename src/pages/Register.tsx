@@ -52,7 +52,7 @@ const Register = () => {
         }
 
   return (
-    <div style={styles.form}>
+    <div>
         <h1>Register</h1>
         <form onSubmit={handleSubmit}>
             {error && <p style={styles.error}>{error}</p>}

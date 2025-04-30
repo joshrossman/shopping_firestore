@@ -42,7 +42,7 @@ const { globalUserId, globalUserName } = useAuth();
         setData({
           date:'',
           products:[],
-          totalPrice:0,
+          totalPrice:1,
           userId:'',
           userName:'',
            
@@ -58,15 +58,14 @@ const { globalUserId, globalUserName } = useAuth();
     <>
     
    
-    <div className='div-cart'>Cart Total: ${cartTotal}<br></br>
-    Number of Items in Cart: {cartItemTotal}<br></br>
+    <div className='div-cart'>Cart Total: ${cartTotal}</div>
+    <div className='div-cart'>Number of Items in Cart: {cartItemTotal}</div>
     <button className='check-out' onClick={()=>{checkOut()}}>Checkout</button>
-    </div>
+    
     
     <div className="cart-cards">
         {
-        cart.map((item)=>{   
-                      
+        cart.map((item)=>{          
                        return(
                         <CartCard product={item} />
                        )

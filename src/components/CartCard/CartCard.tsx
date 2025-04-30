@@ -3,6 +3,14 @@ import { Product } from "../../types/type"
 import "./CartCard.css"
 import { useCartContext } from '../../Context/CartContext'
 
+//integeration test - test the add to cart button
+// checcking that the cart empties out when I click on it. (does not need to check the rendering of the card component)
+// fire.click => wait
+//Can check delete button, and then text that cart is empy
+
+//
+//
+
 
 const CartCard:React.FC<{product:Product}> = ({product}) => {
   const { dispatch } = useCartContext();
