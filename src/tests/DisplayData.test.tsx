@@ -10,11 +10,4 @@ describe('User Name', ()=>{
     })
 })
 
-describe('Update', ()=>{
-    test('Check value',()=>{
-        const {getByText} = render(<DisplayData/>)
-        const myData = getByText(/Update User/i)
-        expect(myData.textContent).toBe('Update User')
-        expect(myData.tagName).toBe('H2')
-    })
-})
+

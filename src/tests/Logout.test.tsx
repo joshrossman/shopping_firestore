@@ -8,3 +8,12 @@ test('matches snapshot', () =>{
     //Create a snapshot of the rendered component
     expect(asFragment()).toMatchSnapshot();
 });
+
+test('Check value',()=>{
+    const {getByText} = render(<Logout/>)
+    const myData = getByText(/Logout/i)
+    expect(myData.textContent).toBe('Logout')
+    
+})
+
+
