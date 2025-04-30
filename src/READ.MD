@@ -1,54 +1,66 @@
+# 🛒 Shopping Firestore
 
-# Shopping Cart App
+A modern e-commerce web application built with React, TypeScript, and Firebase Firestore. This project demonstrates how to integrate a scalable NoSQL database with a responsive frontend to create a seamless shopping experience.
 
-Enjoy shopping at our fake store!
+## 🚀 Features
 
-## Search store
-Look through our wide range of items. Sort through our various categories. 
+- **Product Catalog**: Browse a variety of products with detailed descriptions and images.
+- **Shopping Cart**: Add, remove, and update product quantities in your cart.
+- **User Authentication**: Secure login and registration using Firebase Authentication.
+- **Order Management**: Place orders and view order history.
+- **Real-time Updates**: Instant updates across devices using Firestore's real-time capabilities.
 
-## Shopping Cart
-Add and remove items for your shopping cart, and change number of items needed.
+## 🛠️ Technologies Used
 
-## Checkout and Login
-Checkout with your full cart, and leave with some amazing products!
-Login to your account so we can send items to the right place!
+- **Frontend**: React, TypeScript, Vite
+- **Backend**: Firebase Firestore, Firebase Authentication
+- **State Management**: React Context API (or consider Redux for larger applications)
+- **Styling**: CSS Modules / Styled Components
+- **Build Tool**: Vite for fast development and optimized builds
 
+## 📦 Setup Instructions
 
-## Authors
+### Prerequisites
 
-- [@joshrossman](https://www.github.com/joshrossman)
+Ensure you have the following installed:
 
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Firebase CLI](https://firebase.google.com/docs/cli) (for deploying and managing Firebase services)
 
-## Acknowledgements
+### Installation
 
- - [Coding Temples](codingtemple.com)
- - [Readme.so](https://readme.so/editor)
- - [ChatGpt] For debugging help
- - [FakeStoreAPI] For mock backend API calls.
- - [FreeCssInputs] https://copy-paste-css.com/form-input-text
- 
-## Run Locally
+1. Clone the repository:
 
-Clone the project
+   ```bash
+   git clone https://github.com/joshrossman/shopping_firestore.git
+   cd shopping_firestore
+   ```
 
-```bash
-  git clone https://github.com/joshrossman/react_shopping_app.git
-```
+2. Install dependencies:
 
-Go to the project directory
+   ```bash
+   npm install
+   ```
 
-```bash
-  cd react_shopping_app
-```
+3. Set up Firebase:
 
-Install dependencies
+   - Create a Firebase project in the [Firebase Console](https://console.firebase.google.com/).
+   - Enable Firestore and Authentication services.
+   - Download the `firebaseConfig.js` file and place it in the `src/` directory.
 
-```bash
-  npm install react react-bootstrap bootstrap vite react-star-ratings react-router-dom
-```
+4. Start the development server:
 
+   ```bash
+   npm run dev
+   ```
 
-```bash
-  npm run dev
-```
+   Visit `http://localhost:3000` in your browser to view the application.
+
+## 🔧 Development
+
+- **Start the development server**: `npm run dev` 
+- **Build for production**: `npm run build` 
+- **Run tests**: `npm run test` 
+
 
