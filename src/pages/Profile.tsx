@@ -123,7 +123,7 @@ const Profile = () => {
 
   return (
     <div style={styles.form}>
-      <h1>Profile</h1>
+      <h1>Profile Information</h1>
       {/*Add delete account button */}
 
       <form onSubmit={handleUpdateProfile}>

@@ -4,6 +4,11 @@ import "./ProductCard.css"
 import { useCartContext } from '../../Context/CartContext'
 import StarRatings from 'react-star-ratings'
 
+//mocking - dummy data in the test in the product. expect to have h3, etc. 
+// unit testing - 2 of those one from product and one from somewhere else
+// test the function of cart total -1 should be an error, 0 should say 0, etc. different use cases.
+
+
 
 const ProductCard:React.FC<{product:Product}> = ({product}) => {
   const { cart, dispatch } = useCartContext();
