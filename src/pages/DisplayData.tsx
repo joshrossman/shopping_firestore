@@ -52,9 +52,7 @@ const DisplayData = () => {
                     type='string'
                     placeholder='Enter New Name:'
                     />
-                    <button onClick={()=>updateUser(user.id,{name:newName})}>
-                        Update Name
-                    </button>
+                    <button onClick={()=>updateUser(user.id,{name:newName})}>Update Name</button>
                     <input
                     onChange={(e)=>setNewAge(e.target.value)}
                         type='number'
