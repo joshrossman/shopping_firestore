@@ -30,7 +30,7 @@ const mockProduct: Product =
         </CartProvider>)
 
         
-        
+        console.log('test')
         expect(getByText(/Price:/i).textContent).toBe(`PRICE: $${mockProduct.price}`)
         });
       
