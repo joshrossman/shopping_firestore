@@ -34,7 +34,7 @@ const DisplayData = () => {
 
     return (
         <div>
-            <h2>User List</h2>
+            <h2>User List:</h2>
             {users.map((user) => (
                 <div
                 key={user.id}>

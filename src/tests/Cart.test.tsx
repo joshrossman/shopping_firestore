@@ -62,10 +62,6 @@ rating:
             expect(getByText(/Cart Total:/i).textContent).toBe('Cart Total: $0') 
             expect(getByText(/Number of Items in Cart:/i).textContent).toBe('Number of Items in Cart: 0')
         });
-        
-    
-        
-        
             
       
         });
