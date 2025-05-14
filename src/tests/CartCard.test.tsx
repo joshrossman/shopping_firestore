@@ -1,9 +1,11 @@
 
 import { render} from '@testing-library/react'
 import { CartProvider } from "../Context/CartContext";
-import CartCard from '../components/ProductCard/ProductCard';
+import CartCard from '../components/CartCard/CartCard';
 import { Product } from '../types/type';
+
 import "@testing-library/jest-dom"
+import { ProductProvider } from '../Context/ProductContext';
 
 //unit test with dynamic data
 const mockProduct: Product = 
@@ -27,13 +29,15 @@ const mockProduct: Product =
     test('Updates', async () => {
      
         const {getByText} = render( 
-        <CartProvider> 
+        <CartProvider>
+      
             <CartCard product={mockProduct} />
+           
         </CartProvider>)
 
 
-//  <h3 className='product-title'>Title:{product.title}</h3>
          expect(getByText(`${mockProduct.title}`)).toBeInTheDocument()
+         expect(getByText(`${mockProduct.price}`)).toBeInTheDocument()
         });
        
     });

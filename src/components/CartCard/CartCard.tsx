@@ -26,10 +26,10 @@ const CartCard:React.FC<{product:Product}> = ({product}) => {
   }
   return (
     <div className='product-card'>
-        <h3 className='product-title'>Title:{product.title}</h3>
+        <h3 className='product-title'>{product.title}</h3>
         <p>
         <img className='product-image' src={product.image} alt={product.title} height={50} width={50} />
-        <br></br>PRICE: ${product.price}
+        <h2>{product.price}</h2>
         </p>
         <div>
         <button
