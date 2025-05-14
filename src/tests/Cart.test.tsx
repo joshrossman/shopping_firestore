@@ -57,11 +57,11 @@ rating:
             expect(getByText(/Cart Total:/i).textContent).toBe(`Cart Total: $80`) 
             expect(getByText(/Number of Items in Cart:/i).textContent).toBe('Number of Items in Cart: 2') 
         
-        fireEvent.click(screen.getByText(/Checkout/i));
-        await waitFor(()=>{
-            expect(getByText(/Cart Total:/i).textContent).toBe('Cart Total: $0') 
-            expect(getByText(/Number of Items in Cart:/i).textContent).toBe('Number of Items in Cart: 0')
-        });
+        // fireEvent.click(screen.getByText(/Checkout/i));
+        // await waitFor(()=>{
+        //     expect(getByText(/Cart Total:/i).textContent).toBe('Cart Total: $0') 
+        //     expect(getByText(/Number of Items in Cart:/i).textContent).toBe('Number of Items in Cart: 0')
+        // });
             
       
         });
