@@ -1,15 +1,14 @@
 
-import { render } from '@testing-library/react'
+import { render, screen, getByText } from '@testing-library/react'
 import { CartProvider } from "../Context/CartContext";
-import { Product } from "../types/type";
-import ProductCard from '../components/ProductCard/ProductCard';
-
+import CartCard from '../components/ProductCard/ProductCard';
+import { Product } from '../types/type';
 
 //unit test with dynamic data
 const mockProduct: Product = 
     {
         id:'',
-        title: '',
+        title: 'Shirt',
         price: 375.5,
         description: '',
         category: '',
@@ -17,7 +16,9 @@ const mockProduct: Product =
         rating:
         {
             rate:0,
+            
         },
+        quantity: 2,
     };
     
 
@@ -26,30 +27,20 @@ const mockProduct: Product =
      
         const {getByText} = render( 
         <CartProvider> 
-            <ProductCard product={mockProduct} />
+            <CartCard product={mockProduct} />
         </CartProvider>)
 
-        
-        expect(getByText(/Price:/i).textContent).toBe(`PRICE: $${mockProduct.price}`)
+
+
+         expect(getByText(/Title:/i).textContent).toBe(`Title:${mockProduct.title}`)
+        });
+       
         });
       
-    });
-
-    
-    
-
-
-
-
-
-
-
-
-   
     
 
     
     
-   
-       
+
+
 

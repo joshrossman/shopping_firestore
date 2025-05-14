@@ -20,7 +20,7 @@ rating:
  quantity: 0
     }
 
-
+    
 
   describe('PostForm Component Integration Test', () => {
     test('submits the form data correctly', async () => {
@@ -51,19 +51,15 @@ rating:
         if(mockProduct.quantity!==undefined)
             expect(getByText(/Cart Total:/i).textContent).toBe(`Cart Total: $120`) 
             expect(getByText(/Number of Items in Cart:/i).textContent).toBe('Number of Items in Cart: 3') 
-
             fireEvent.click(screen.getByText(/\-/));
+
         if(mockProduct.quantity!==undefined)
             expect(getByText(/Cart Total:/i).textContent).toBe(`Cart Total: $80`) 
             expect(getByText(/Number of Items in Cart:/i).textContent).toBe('Number of Items in Cart: 2') 
-        
-        // fireEvent.click(screen.getByText(/Checkout/i));
-        // await waitFor(()=>{
-        //     expect(getByText(/Cart Total:/i).textContent).toBe('Cart Total: $0') 
-        //     expect(getByText(/Number of Items in Cart:/i).textContent).toBe('Number of Items in Cart: 0')
-        // });
-            
-      
+    
         });
       
     });
+
+
+
